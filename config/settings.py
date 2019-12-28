@@ -22,6 +22,7 @@ environ.Env.read_env()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 STATIC_DIR=os.path.join(BASE_DIR,'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -133,3 +134,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR
     ]
+
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL ='/media/'
