@@ -13,11 +13,13 @@
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
         crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     
 
     
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <script src='{% static 'js/main.js' %}'></script>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+    {% comment %} <script src='{% static 'js/main.js' %}'></script> {% endcomment %}
 </head>
 
 <body>
@@ -39,15 +41,19 @@
   {% comment %} navbar ends here {% endcomment %}
   <br> <br>
 
-  {% comment %} upload form starts {% endcomment %}
+    <form class="" method="post" enctype="multipart/form-data" >
+    <input type="file" name="file" id="file"><br> <br>
+    <input class="btn btn-success" type="submit" value="Upload">
+    </form>
+  {% comment %} upload form starts
   
   <div id="container">
     <form method="post" enctype="multipart/form-data" novalidate="" class="box has-advanced-upload">
       {% csrf_token %}
       
-      {% comment %} upload box starts here  {% endcomment %}
+      upload box starts here 
       <div class="box-input">
-      {% comment %} rocket svg starts {% endcomment %}
+      rocket svg starts
         <svg x="0px" y="0px" viewBox="0 0 64 62" style="enable-background:new 0 0 64 62;" xml:space="preserve">
           <g id="spa-launch">
             <path class="st0" d="M33,27.1h-8c0,0-2-6-2-12c0-8,6-14,6-14s6,6,6,14C35,21.1,33,27.1,33,27.1z"/>
@@ -63,25 +69,28 @@
             <path class="st0" d="M18.8,37.9c-1.1-0.5-2.4-0.8-3.8-0.8c-4.6,0-8.5,3.5-8.9,8"/>
           </g>
         </svg>
-        {% comment %} rocket svg ends here {% endcomment %}
+        rocket svg ends here
         
         <input type="file" name="files[]" id="file" class="box-file" data-multiple-caption="{count} files selected" multiple="">
         <label for="file"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
         <button type="submit" class="button">Upload</button>
       </div>
-      {% comment %} upload box ends here  {% endcomment %}
+      upload box ends here 
 
       <div class="box-uploading">Uploading…</div>
       <div class="box-success">Done! <a href="https://css-tricks.com/examples/DragAndDropFileUploading//?submit-on-demand" class="box-restart" role="button" data-unsp-sanitized="clean">Upload more?</a></div>
       <div class="box-error">Error! <span></span>. <a href="https://css-tricks.com/examples/DragAndDropFileUploading//?submit-on-demand" class="box-restart" role="button" data-unsp-sanitized="clean">Try again!</a></div>
       <input type="hidden" name="ajax" value="1"></form>
 
-  </div>
+  </div> {% endcomment %}
 
   <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  {% comment %} <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> {% endcomment %}
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+
 
 </body>
 </html>
