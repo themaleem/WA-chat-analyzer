@@ -42,8 +42,9 @@
   <br> <br>
 
     <form class="" method="post" enctype="multipart/form-data" >
-    <input type="file" name="file" id="file"><br> <br>
-    <input class="btn btn-success" type="submit" value="Upload">
+      {% csrf_token %}
+      <input type="file" name="file" id="file"><br> <br>
+      <input class="btn btn-success" type="submit" value="Upload">
     </form>
   {% comment %} upload form starts
   
