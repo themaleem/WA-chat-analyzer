@@ -1,0 +1,4 @@
+features to be added:
+    drag and drop upload feature
+    add amount of words in chat feature
+    most frequent chatter
